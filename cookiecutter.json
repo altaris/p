@@ -1,0 +1,9 @@
+{
+    "full_name": "Cédric Ho Thanh",
+    "email": "altaris@users.noreply.github.com",
+    "github_username": "altaris",
+    "project_name": "",
+    "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}",
+    "project_short_description": "",
+    "version": "0.0.0"
+}
