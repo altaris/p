@@ -11,14 +11,14 @@
 
 ## Dependencies
 
-* `python3.8` or newer;
+* `python{{ cookiecutter.python_version }}` or newer;
 * `requirements.txt` for runtime dependencies;
 * `requirements.dev.txt` for development dependencies.
 * `make` (optional);
 
 Simply run
 ```sh
-virtualenv venv -p python3.8
+virtualenv venv -p python{{ cookiecutter.python_version }}
 . ./venv/bin/activate
 pip install --upgrade pip
 pip install -r requirements.txt
