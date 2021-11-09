@@ -18,7 +18,7 @@ docs-browser:
 
 .PHONY: format
 format:
-	black --line-length 79 --target-version py38 $(SRC_PATH)
+	black --line-length 79 --target-version py{{ cookiecutter.python_version.replace('.', '') }} $(SRC_PATH)
 
 .PHONY: lint
 lint:
