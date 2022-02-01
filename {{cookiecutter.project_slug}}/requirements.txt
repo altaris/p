@@ -1,0 +1,3 @@
+{%- if cookiecutter.click_main == "y" -%}
+click
+{% endif %}
