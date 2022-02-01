@@ -20,3 +20,14 @@ _download \
 git init
 git add ./
 git commit -a -m "Initial commit"
+
+# ==============================================================================
+# Virtual environment
+# ==============================================================================
+
+virtualenv venv
+# TODO: Fix
+# source ./venv/bin/activate
+# env python -m pip install -U pip
+# env python -m pip install -U -r requirements.txt
+# env python -m pip install -U -r requirements.dev.txt
