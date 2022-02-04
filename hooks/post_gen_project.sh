@@ -25,34 +25,6 @@ echo "
 .vscode/" >> .gitignore
 
 # ==============================================================================
-# Setup VSCode
-# ==============================================================================
-
-mkdir .vscode
-echo "{
-    \"folders\": [
-        {
-            \"path\": \".\"
-        }
-    ]
-}" > "$(basename "$(pwd)").code-workspace"
-echo "{
-    \"python.pythonPath\": \"venv/bin/python\",
-    \"python.linting.pylintEnabled\": true,
-    \"python.linting.enabled\": true,
-    \"files.exclude\": {
-        \"**/.DS_Store\": true,
-        \"**/.git\": true,
-        \"**/.hg\": true,
-        \"**/.mypy_cache/\": true,
-        \"**/.svn\": true,
-        \"**/CVS\": true,
-        \"**/Thumbs.db\": true,
-        \"venv/\": true,
-    }
-}" > .vscode/settings.json
-
-# ==============================================================================
 # Git
 # ==============================================================================
 
