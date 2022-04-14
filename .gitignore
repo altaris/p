@@ -1,0 +1,9 @@
+# MacOS littering everywhere
+.DS_Store
+
+# PyCharm
+.idea
+
+# VSCode
+*.code-workspace
+.vscode/
