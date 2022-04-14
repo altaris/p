@@ -5,6 +5,7 @@ __docformat__ = "google"
 {% if cookiecutter.click_main == "y" %}
 
 import logging
+import os
 
 import click
 
@@ -40,7 +41,7 @@ def _setup_logging(logging_level: str) -> None:
 @click.command()
 @click.option(
     "--logging-level",
-    default="info",
+    default=os.getenv("LOGGING_LEVEL", "info"),
     help=(
         "Logging level, among 'critical', 'debug', 'error', 'info', and "
         "'warning', case insensitive."
