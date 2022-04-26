@@ -2,14 +2,15 @@
 Entry point
 """
 __docformat__ = "google"
-{% if cookiecutter.click_main == "y" %}
+
 
 import logging
 import os
 
+{% if cookiecutter.click_main == "y" %}
 import click
 
-
+{% endif %}
 def _setup_logging(logging_level: str) -> None:
     """
     Sets logging format and level. The format is
@@ -37,7 +38,7 @@ def _setup_logging(logging_level: str) -> None:
         level=logging_levels.get(logging_level.lower(), logging.INFO),
     )
 
-
+{% if cookiecutter.click_main == "y" %}
 @click.command()
 @click.option(
     "--logging-level",
@@ -56,8 +57,12 @@ def main(
 ):
     """Entrypoint."""
     _setup_logging(logging_level)
-
+{% else %}
+def main():
+    """Entrypoint."""
+    _setup_logging(os.getenv("LOGGING_LEVEL", "info"))
+{% endif %}
 
 # pylint: disable=no-value-for-parameter
-main()
-{% endif %}
+if __name__ == "__main__":
+    main()
