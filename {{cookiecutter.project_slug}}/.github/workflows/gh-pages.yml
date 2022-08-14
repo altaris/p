@@ -16,7 +16,7 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v3
         with:
-          python-version: {{ cookiecutter.python_version }}
+          python-version: '{{ cookiecutter.python_version }}'
 
       - name: Install pdoc
         run: |
