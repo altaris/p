@@ -4,13 +4,11 @@ Entry point
 __docformat__ = "google"
 
 
-import logging
 import os
-{%- if cookiecutter.click_main == "y" %}
-
+import sys
 
 import click
-{%- endif %}
+from loguru import logger as logging
 
 
 def _setup_logging(logging_level: str) -> None:
@@ -28,20 +26,20 @@ def _setup_logging(logging_level: str) -> None:
         logging_level (str): Either 'critical', 'debug', 'error', 'info', or
             'warning', case insensitive. If invalid, defaults to 'info'.
     """
-    logging_levels = {
-        "critical": logging.CRITICAL,
-        "debug": logging.DEBUG,
-        "error": logging.ERROR,
-        "info": logging.INFO,
-        "warning": logging.WARNING,
-    }
-    logging.basicConfig(
-        format="%(asctime)s [%(levelname)-8s] %(message)s",
-        level=logging_levels.get(logging_level.lower(), logging.INFO),
+    logging.remove()
+    logging.add(
+        sys.stderr,
+        format=(
+            "<green>{time:YYYY-MM-DD HH:mm:ss}</green> "
+            + "[<level>{level: <8}</level>] "
+            + "<level>{message}</level>"
+        ),
+        level=logging_level.upper(),
+        enqueue=True,
+        colorize=True,
     )
 
 
-{% if cookiecutter.click_main == "y" -%}
 @click.command()
 @click.option(
     "--logging-level",
@@ -55,16 +53,9 @@ def _setup_logging(logging_level: str) -> None:
         case_sensitive=False,
     ),
 )
-def main(
-    logging_level: str,
-):
+def main(logging_level: str):
     """Entrypoint."""
     _setup_logging(logging_level)
-{%- else -%}
-def main():
-    """Entrypoint."""
-    _setup_logging(os.getenv("LOGGING_LEVEL", "info"))
-{%- endif %}
 
 
 # pylint: disable=no-value-for-parameter
