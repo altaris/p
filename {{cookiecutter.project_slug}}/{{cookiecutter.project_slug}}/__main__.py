@@ -1,7 +1,6 @@
 """
 Entry point
 """
-__docformat__ = "google"
 
 
 import os
