@@ -1,17 +1,17 @@
 {
-    "python.defaultInterpreterPath": "venv/bin/python",
-    "python.linting.pylintEnabled": true,
-    "python.linting.enabled": true,
-    "files.exclude": {
-        "**/__pycache__": true,
-        "**/.DS_Store": true,
-        "**/.git": true,
-        "**/.hg": true,
-        "**/.ipynb_checkpoints": true,
-        "**/.mypy_cache/": true,
-        "**/.svn": true,
-        "**/CVS": true,
-        "**/Thumbs.db": true,
-        "**/venv/": true,
-    }
+  "python.defaultInterpreterPath": "venv/bin/python",
+  "python.linting.pylintEnabled": true,
+  "python.linting.enabled": true,
+  "files.exclude": {
+    "**/__pycache__": true,
+    "**/.DS_Store": true,
+    "**/.git": true,
+    "**/.hg": true,
+    "**/.ipynb_checkpoints": true,
+    "**/.mypy_cache/": true,
+    "**/.svn": true,
+    "**/CVS": true,
+    "**/Thumbs.db": true,
+    "**/venv/": true
+  }
 }
