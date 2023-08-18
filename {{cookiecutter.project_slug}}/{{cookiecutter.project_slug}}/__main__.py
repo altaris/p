@@ -1,16 +1,28 @@
-"""
-Entry point
-"""
+"""CLI module"""
 
 
 import os
 import sys
+from typing import Literal
 
 import click
 from loguru import logger as logging
 
 
-def _setup_logging(logging_level: str) -> None:
+def _setup_logging(
+    logging_level: Literal[
+        "critical",
+        "CRITICAL",
+        "debug",
+        "DEBUG",
+        "error",
+        "ERROR",
+        "info",
+        "INFO",
+        "warning",
+        "WARNING",
+    ]
+) -> None:
     """
     Sets logging format and level. The format is
 
@@ -48,7 +60,18 @@ def _setup_logging(logging_level: str) -> None:
         "'warning', case insensitive."
     ),
     type=click.Choice(
-        ["critical", "debug", "error", "info", "warning"],
+        [
+            "critical",
+            "CRITICAL",
+            "debug",
+            "DEBUG",
+            "error",
+            "ERROR",
+            "info",
+            "INFO",
+            "warning",
+            "WARNING",
+        ],
         case_sensitive=False,
     ),
 )
