@@ -52,6 +52,7 @@ def _setup_logging(logging_level: str) -> None:
         case_sensitive=False,
     ),
 )
+@logging.catch
 def main(logging_level: str):
     """Entrypoint."""
     _setup_logging(logging_level)
