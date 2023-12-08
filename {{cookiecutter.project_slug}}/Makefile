@@ -1,7 +1,12 @@
-DOCS_PATH 		= docs
 SRC_PATH 		= {{ cookiecutter.project_slug }}
-VENV			= ./venv
-PDOC			= pdoc -d google --math
+
+BLACK			= python3 -m black --line-length 79 --target-version py{{ cookiecutter.python_version.replace('.', '') }}
+MYPY			= python3 -m mypy
+PDOC			= python3 -m pdoc -d google --math
+PYLINT			= python3 -m pylint
+
+DOCS_PATH 		= docs
+VENV_PATH		= venv
 
 .ONESHELL:
 
@@ -19,12 +24,12 @@ docs-browser:
 
 .PHONY: format
 format:
-	black --line-length 79 --target-version py{{ cookiecutter.python_version.replace('.', '') }} $(SRC_PATH)
+	$(BLACK) $(SRC_PATH)
 
 .PHONY: lint
 lint:
-	pylint $(SRC_PATH)
+	$(PYLINT) $(SRC_PATH)
 
 .PHONY: typecheck
 typecheck:
-	mypy -p $(SRC_PATH)
+	$(MYPY) -p $(SRC_PATH)
