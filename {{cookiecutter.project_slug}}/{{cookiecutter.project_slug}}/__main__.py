@@ -55,10 +55,7 @@ def _setup_logging(
 @click.option(
     "--logging-level",
     default=os.getenv("LOGGING_LEVEL", "info"),
-    help=(
-        "Logging level, among 'critical', 'debug', 'error', 'info', and "
-        "'warning', case insensitive."
-    ),
+    help=("Logging level, case insensitive"),
     type=click.Choice(
         [
             "critical",
