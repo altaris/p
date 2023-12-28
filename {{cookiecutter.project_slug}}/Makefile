@@ -1,12 +1,12 @@
 SRC_PATH 		= {{ cookiecutter.project_slug }}
-
-BLACK			= python3 -m black --line-length 79 --target-version py{{ cookiecutter.python_version.replace('.', '') }}
-MYPY			= python3 -m mypy
-PDOC			= python3 -m pdoc -d google --math
-PYLINT			= python3 -m pylint
-
-DOCS_PATH 		= docs
 VENV_PATH		= venv
+DOCS_PATH 		= docs
+
+PYTHON			= python3{{ cookiecutter.python_version }}
+BLACK			= $(PYTHON) -m black --line-length 79 --target-version py{{ cookiecutter.python_version.replace('.', '') }}
+MYPY			= $(PYTHON) -m mypy
+PDOC			= $(PYTHON) -m pdoc -d google --math
+PYLINT			= $(PYTHON) -m pylint
 
 .ONESHELL:
 
