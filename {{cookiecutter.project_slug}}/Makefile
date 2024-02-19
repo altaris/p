@@ -2,7 +2,7 @@ SRC_PATH 		= {{ cookiecutter.project_slug }}
 VENV_PATH		= venv
 DOCS_PATH 		= docs
 
-PYTHON			= python3{{ cookiecutter.python_version }}
+PYTHON			= python{{ cookiecutter.python_version }}
 BLACK			= $(PYTHON) -m black --line-length 79 --target-version py{{ cookiecutter.python_version.replace('.', '') }}
 MYPY			= $(PYTHON) -m mypy
 PDOC			= $(PYTHON) -m pdoc -d google --math
