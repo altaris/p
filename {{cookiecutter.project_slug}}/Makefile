@@ -1,12 +1,13 @@
-SRC_PATH 		= {{ cookiecutter.project_slug }}
-VENV_PATH		= venv
-DOCS_PATH 		= docs
+SRC_PATH 	= {{ cookiecutter.project_slug }}
+VENV_PATH	= venv
+DOCS_PATH 	= docs
 
-PYTHON			= python{{ cookiecutter.python_version }}
-BLACK			= $(PYTHON) -m black --line-length 79 --target-version py{{ cookiecutter.python_version.replace('.', '') }}
-MYPY			= $(PYTHON) -m mypy
-PDOC			= $(PYTHON) -m pdoc -d google --math
-PYLINT			= $(PYTHON) -m pylint
+BLACK		= $(PYTHON) -m black --line-length 79 --target-version py{{ cookiecutter.python_version.replace('.', '') }}
+ISORT		= $(PYTHON) -m isort --line-length 79 --python-version {{ cookiecutter.python_version.replace('.', '') }} --multi-line VERTICAL_HANGING_INDENT
+MYPY		= $(PYTHON) -m mypy
+PDOC		= $(PYTHON) -m pdoc -d google --math
+PYLINT		= $(PYTHON) -m pylint
+PYTHON		= python{{ cookiecutter.python_version }}
 
 .ONESHELL:
 
@@ -24,6 +25,7 @@ docs-browser:
 
 .PHONY: format
 format:
+	$(ISORT) $(SRC_PATH)
 	$(BLACK) $(SRC_PATH)
 
 .PHONY: lint
