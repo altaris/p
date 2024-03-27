@@ -14,18 +14,7 @@ from .logging import setup_logging
     default=os.getenv("LOGGING_LEVEL", "info"),
     help=("Logging level, case insensitive"),
     type=click.Choice(
-        [
-            "critical",
-            "CRITICAL",
-            "debug",
-            "DEBUG",
-            "error",
-            "ERROR",
-            "info",
-            "INFO",
-            "warning",
-            "WARNING",
-        ],
+        ["critical", "debug", "error", "info", "warning"],
         case_sensitive=False,
     ),
 )
