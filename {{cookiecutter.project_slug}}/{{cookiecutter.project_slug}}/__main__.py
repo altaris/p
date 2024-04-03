@@ -23,7 +23,7 @@ from .logging import setup_logging
 )
 @logging.catch
 def main(logging_level: str):
-    """Entrypoint."""
+    """Entrypoint."""  # TODO: Replace this with a proper docstring
     setup_logging(logging_level)
 
 
