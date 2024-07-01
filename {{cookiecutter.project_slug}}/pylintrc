@@ -61,16 +61,20 @@ confidence=
 # no Warning level messages displayed, use "--disable=all --enable=classes
 # --disable=W".
 disable=
-      import-error,
-      invalid-name,
+      ; import-error,
+      ; too-few-public-methods,
+      bare-except, ; i know what i'm doing >:(
+      broad-except, ; i know what i'm doing >:(
+      fixme, ; clutters the report
+      import-outside-toplevel, ; i know what i'm doing >:(
       line-too-long,
-      protected-access,
-      too-few-public-methods,
-      too-many-arguments,
-      ; broad-except,
-      ; duplicate-code,
-      ; global-statement,
-      ; import-outside-toplevel,
+      not-callable, ; too many false positive
+      too-many-ancestors, ; stfu
+      too-many-arguments, ; look things are hard enough already ok
+      too-many-instance-attributes, ; ¯\_(ツ)_/¯
+      too-many-locals, ; look things are hard enough already ok
+      too-many-statements, ; look things are hard enough already ok
+      unnecessary-lambda-assignment, ; i like lambdas
 
 # Enable the message, report, category or checker with the given id(s). You can
 # either give multiple identifier separated by comma (,) or put this option
@@ -312,7 +316,7 @@ contextmanager-decorators=contextlib.contextmanager
 # List of members which are set dynamically and missed by pylint inference
 # system, and so shouldn't trigger E1101 when accessed. Python regular
 # expressions are accepted.
-generated-members=
+generated-members=torch.*
 
 # Tells whether missing members accessed in mixin class should be ignored. A
 # mixin class is detected if its name ends with "mixin" (case insensitive).
