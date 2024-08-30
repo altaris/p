@@ -1,5 +1,0 @@
-{
-    "include": [
-        "{{cookiecutter.project_slug}}"
-    ]
-}
