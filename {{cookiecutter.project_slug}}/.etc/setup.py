@@ -25,9 +25,7 @@ setuptools.setup(
     classifiers=[
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
-        "Programming Language :: Python :: 3",
-        "Programming Language :: Python :: 3.8",
-        "Programming Language :: Python :: 3.9",
+        "Programming Language :: Python :: {{ cookiecutter.python_version }}",
     ],
     install_requires=requirements,
     long_description=long_description,
@@ -38,7 +36,7 @@ setuptools.setup(
     project_urls={
         "Issues": "https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}/issues",
     },
-    python_requires=">=3.8",
+    python_requires=">={{ cookiecutter.python_version }}",
     url="https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}",
     version=version,
 )
