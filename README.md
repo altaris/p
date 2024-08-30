@@ -8,3 +8,9 @@ ezpz
 ```sh
 cookiecutter gh:altaris/p
 ```
+
+# How to use in test mode
+
+```sh
+cookiecutter .
+```
