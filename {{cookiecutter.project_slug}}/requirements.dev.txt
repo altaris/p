@@ -1,6 +1,0 @@
-black
-isort
-mypy
-pdoc
-pylint
-types-click

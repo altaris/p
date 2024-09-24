@@ -1,20 +1,11 @@
 # Contributing
 
-## Dependencies
+## Installation
 
-- `python{{ cookiecutter.python_version }}` or newer;
-- `requirements.txt` for runtime dependencies;
-- `requirements.dev.txt` for development dependencies.
-- `make` (optional);
-
-Simply run
+Make sure [`uv`](https://docs.astral.sh/uv/) is installed. Then, run
 
 ```sh
-virtualenv venv -p python{{ cookiecutter.python_version }}
-. ./venv/bin/activate
-pip install --upgrade pip
-pip install -r requirements.txt
-pip install -r requirements.dev.txt
+uv python install {{ cookiecutter.python_version }}
 ```
 
 ## Documentation
@@ -40,6 +31,5 @@ Don't forget to run
 make
 ```
 
-to format the code following [black](https://pypi.org/project/black/),
-typecheck it using [mypy](http://mypy-lang.org/), and check it against coding
-standards using [pylint](https://pylint.org/).
+to format and check the code using [`ruff`](https://docs.astral.sh/ruff/) and
+typecheck it using [mypy](http://mypy-lang.org/).
