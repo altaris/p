@@ -1,16 +1,17 @@
 {
   "files.exclude": {
     "**/__pycache__": true,
-    "**/*.DS_Store": true,
     "**/.git": true,
     "**/.hg": true,
     "**/.ipynb_checkpoints": true,
-    "**/.mypy_cache/": true,
+    "**/.mypy_cache": true,
+    "**/.ruff_cache": true,
     "**/.svn": true,
+    "**/.venv": true,
+    "**/*.DS_Store": true,
     "**/CVS": true,
     "**/Thumbs.db": true,
-    "**/venv/": true
+    "**/venv": true,
   },
   "python.analysis.typeCheckingMode": "basic",
-  "python.defaultInterpreterPath": "venv/bin/python",
 }
