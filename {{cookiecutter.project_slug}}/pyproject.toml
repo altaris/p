@@ -16,9 +16,18 @@
         Repository    = "https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}.git"
     [project.optional-dependencies]
         dev = ["pdoc>=14.7.0"]
+# https://mypy.readthedocs.io/en/stable/config_file.html#config-file-format
 [tool.mypy]
     check_untyped_defs     = true
+    disallow_untyped_defs  = true
     ignore_missing_imports = true
+    pretty                 = true
+    python_version         = "{{ cookiecutter.python_version }}"
+    strict_equality        = true
+    warn_redundant_casts   = true
+    warn_return_any        = true
+    warn_unreachable       = true
+    warn_unused_ignores    = true
 [tool.pyright]
     include = ["nlnas"]
 [tool.ruff]
