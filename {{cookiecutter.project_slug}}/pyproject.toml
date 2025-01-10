@@ -29,7 +29,7 @@
     warn_unreachable       = true
     warn_unused_ignores    = true
 [tool.pyright]
-    include = ["nlnas"]
+    include = ["{{ cookiecutter.project_slug }}"]
 [tool.ruff]
     exclude = [
         ".bzr",
