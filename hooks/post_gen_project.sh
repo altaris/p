@@ -37,3 +37,15 @@ echo "
 git init
 git add ./
 git commit -a -m "Initial commit"
+
+# ==============================================================================
+# push to github
+# ==============================================================================
+
+{% if cookiecutter.push_to_github|lower == 'y' %}
+REPO='{{ cookiecutter.github_username }}/{{ cookiecutter.project_name|lower|replace(' ', '-') }}.git'
+echo "Pushing to $REPO"
+git remote add origin git@github.com:$REPO
+git branch -M master
+git push -u origin master
+{% endif %}
