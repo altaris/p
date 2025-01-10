@@ -1,10 +1,11 @@
 {
-    "project_name": "",
-    "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}",
-    "project_short_description": "",
-    "version": "0.0.0",
-    "github_username": "altaris",
-    "full_name": "Cédric Ho Thanh",
-    "email": "altaris@users.noreply.github.com",
-    "python_version": "3.11"
+  "project_name": "",
+  "project_slug": "{{ cookiecutter.project_name|lower|replace(' ', '_')|replace('-', '_') }}",
+  "project_short_description": "",
+  "version": "0.0.0",
+  "python_version": "3.11",
+  "exact_python_version": "n",
+  "github_username": "altaris",
+  "full_name": "Cédric Ho Thanh",
+  "email": "altaris@users.noreply.github.com"
 }

@@ -6,7 +6,7 @@
     license         = { file = "LICENSE" }
     name            = "{{ cookiecutter.project_slug }}"
     readme          = "README.md"
-    requires-python = ">={{ cookiecutter.python_version }}"
+    requires-python = "{% if cookiecutter.exact_python_version|lower == 'y' %}=={% else %}>={% endif %}{{ cookiecutter.python_version }}"
     version         = "0.0.0"
     [project.urls]
         "Bug Tracker" = "https://github.com/{{ cookiecutter.github_username }}/{{ cookiecutter.project_slug }}/issues"
