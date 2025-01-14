@@ -25,6 +25,10 @@ format:
 	uvx ruff check --select I --fix $(RUFF_EXCL)
 	uvx ruff format $(RUFF_EXCL)
 
+.PHONY: install-ipykernel
+install-ipykernel:
+	uv run --with ipykernel python -m ipykernel install --user --name {{ cookiecutter.project_slug }}
+
 .PHONY: lint
 lint:
 	uvx ruff check $(RUFF_EXCL)
