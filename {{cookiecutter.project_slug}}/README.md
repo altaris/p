@@ -1,7 +1,8 @@
 # {{ cookiecutter.project_name }}
 
-![Python 3](https://img.shields.io/badge/python-3-blue?logo=python)
+![Python {{ cookiecutter.python_version }}](https://img.shields.io/badge/python-{{ cookiecutter.python_version }}-blue?logo=python)
 [![License](https://img.shields.io/badge/license-MIT-green)](https://choosealicense.com/licenses/mit/)
-[![Code style](https://img.shields.io/badge/style-black-black)](https://pypi.org/project/black)
+[![Code style](https://img.shields.io/badge/style-ruff-yellow?logo=ruff)](https://docs.astral.sh/ruff/)
+[![Documentation](https://img.shields.io/badge/Documentation-here-pink)](https://cedric.hothanh.fr/{{ cookiecutter.project_slug }}/{{ cookiecutter.project_slug }}.html)
 
 {{ cookiecutter.project_short_description }}
