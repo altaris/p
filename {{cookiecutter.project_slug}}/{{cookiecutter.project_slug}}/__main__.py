@@ -12,9 +12,10 @@ from .logging import setup_logging
 @click.option(
     "--logging-level",
     default=os.getenv("LOGGING_LEVEL", "info"),
+    show_default=True,
     help=(
-        "Logging level, case insensitive. Defaults to 'info'. Can also be set "
-        "using the LOGGING_LEVEL environment variable."
+        "Logging level, case insensitive. Can also be set using the "
+        "LOGGING_LEVEL environment variable."
     ),
     type=click.Choice(
         ["critical", "debug", "error", "info", "warning"],
