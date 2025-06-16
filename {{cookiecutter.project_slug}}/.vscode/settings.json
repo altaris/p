@@ -13,5 +13,4 @@
     "**/Thumbs.db": true,
     "**/venv": true,
   },
-  "python.analysis.typeCheckingMode": "basic",
 }
