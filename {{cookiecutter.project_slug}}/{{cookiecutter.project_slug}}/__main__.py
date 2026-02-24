@@ -5,7 +5,7 @@ import os
 import click
 from loguru import logger as logging
 
-from .logging import setup_logging
+from .logging import LOGGING_LEVELS, setup_logging
 
 
 @click.command()
@@ -17,10 +17,7 @@ from .logging import setup_logging
         "Logging level, case insensitive. Can also be set using the "
         "LOGGING_LEVEL environment variable."
     ),
-    type=click.Choice(
-        ["critical", "debug", "error", "info", "warning"],
-        case_sensitive=False,
-    ),
+    type=click.Choice(LOGGING_LEVELS, case_sensitive=False),
 )
 @logging.catch
 def main(logging_level: str) -> None:
