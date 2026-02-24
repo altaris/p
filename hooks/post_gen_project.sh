@@ -20,15 +20,35 @@ _download \
     .gitignore
 
 echo "
-# MacOS littering everywhere
-.DS_Store
+# ML frameworks, model weights
+*.ckpt
+*.onnx
+*.pt
+*.pth
+*.st
+lightning_logs/
+runs/
+wandb/
 
-# PyCharm
-.idea
 
 # VSCode
 *.code-workspace
-.vscode/" >> .gitignore
+
+# MacOS littering everywhere
+.DS_Store
+
+# My stuff
+*_test.py
+asdf/
+bar/
+foo/
+foobar/
+out/
+output/
+outputs/
+secrets/
+TODO.txt
+" >> .gitignore
 
 # ==============================================================================
 # git
