@@ -29,7 +29,7 @@ def _is_rank_zero() -> bool:
         import torch.distributed as dist
 
         if dist.is_available() and dist.is_initialized():
-            return dist.get_rank() == 0
+            return dist.get_rank() == 0  # type: ignore
     except (ImportError, AttributeError):
         pass
     for env_var in ["LOCAL_RANK", "RANK"]:
