@@ -55,6 +55,8 @@ TODO.txt
 # ==============================================================================
 
 git init
+git config --local user.name "{{ cookiecutter.full_name }}"
+git config --local user.email "{{ cookiecutter.email }}"
 git add ./
 git commit -a -m "Initial commit"
 
