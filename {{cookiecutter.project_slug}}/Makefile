@@ -1,9 +1,10 @@
-SRC_PATH 	= {{ cookiecutter.project_slug }}
-DOCS_PATH 	= docs
+PROJECT_NAME	= {{ cookiecutter.project_slug }}
+SRC_PATH 		= {{ cookiecutter.project_slug }}
+DOCS_PATH 		= docs
 
-UV_RUN		= uv run --frozen
-PDOC		= pdoc -d google --math
-RUFF_EXCL   = --exclude '*.ipynb' --exclude 'old/'
+UV_RUN			= uv run --frozen
+PDOC			= pdoc -d google --math
+RUFF_EXCL   	= --exclude '*.ipynb' --exclude 'old/'
 
 .ONESHELL:
 
@@ -30,7 +31,7 @@ format:
 
 .PHONY: install-ipykernel
 install-ipykernel:
-	$(UV_RUN) --with ipykernel python -m ipykernel install --user --name {{ cookiecutter.project_slug }}
+	$(UV_RUN) --with ipykernel python -m ipykernel install --user --name $(PROJECT_NAME)
 
 .PHONY: lint
 lint:
