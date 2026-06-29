@@ -43,8 +43,8 @@ lint-fix:
 
 .PHONY: shellcheck
 shellcheck:
-	-shellcheck *.sh
-	-shellcheck **/*.sh
+	shellcheck *.sh
+	shellcheck **/*.sh
 
 .PHONY: tests
 tests:
