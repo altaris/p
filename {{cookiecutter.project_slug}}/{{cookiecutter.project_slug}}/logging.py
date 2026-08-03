@@ -129,4 +129,4 @@ def setup_logging(
         ),
         level=_nameToLevel[logging_level],
         **kw,
-    )  # type: ignore
+    )
