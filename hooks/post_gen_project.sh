@@ -25,11 +25,11 @@ echo "
 *.onnx
 *.pt
 *.pth
+*.safetensors
 *.st
 lightning_logs/
 runs/
 wandb/
-
 
 # VSCode
 *.code-workspace
@@ -38,16 +38,18 @@ wandb/
 .DS_Store
 
 # My stuff
-*_test.py
-asdf/
-bar/
-foo/
-foobar/
-out/
-output/
-outputs/
-secrets/
+/*_test.py
+/test_*.py
 TODO.txt
+/asdf
+/bar
+/foo
+/foobar
+/out
+/output
+/outputs
+/secrets
+/test
 " >> .gitignore
 
 # ==============================================================================
