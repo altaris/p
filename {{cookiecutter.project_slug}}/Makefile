@@ -31,7 +31,8 @@ format:
 
 .PHONY: install-ipykernel
 install-ipykernel:
-	$(UV_RUN) --with ipykernel python -m ipykernel install --user --name $(PROJECT_NAME)
+	uv add --group dev ipykernel
+	$(UV_RUN) python -m ipykernel install --user --name $(PROJECT_NAME)
 
 .PHONY: lint
 lint:
